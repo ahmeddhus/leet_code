@@ -5,11 +5,6 @@ class Solution {
         }
         if(x < 0){
           return false;
-        }
-        else if(x > 9 && x < 100){
-          String[] numbersList = (x+"").split("");
-          if(!numbersList[0].equals(numbersList[1])) return false;
-          else return true;
         }else{
           String[] numbersList = (x+"").split("");
           int lastIndex = numbersList.length - 1;
@@ -18,7 +13,6 @@ class Solution {
               return false;
             }
           }
-
           return true;
         }
     }
