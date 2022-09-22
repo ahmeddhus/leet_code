@@ -13,8 +13,7 @@ class Solution {
         reversedWordSP.append(wordSp.toString()+ " ");
       }
 
-        reversedWordSP.setLength(reversedWordSP.length() -1);
 
-        return reversedWordSP.toString();
+        return reversedWordSP.toString().trim();
     }
 }
