@@ -27,9 +27,7 @@ class Solution {
         if(list1 != null) {
             currentNode.next = list1;
             list1 = list1.next;
-        } 
-        
-        if(list2 != null){
+        }  else if(list2 != null){
             currentNode.next = list2;
             list2 = list2.next;
         }
