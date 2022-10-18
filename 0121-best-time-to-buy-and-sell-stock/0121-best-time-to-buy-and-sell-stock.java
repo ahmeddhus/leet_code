@@ -9,6 +9,5 @@ class Solution {
                 min=prices[i];
         }
         return max;
-
     }
 }
