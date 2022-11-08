@@ -1,10 +1,13 @@
 class Solution {
     public String makeGood(String s) {
-        for (int i = 0; i < s.length() - 1; i++) {
-            if (Math.abs(s.charAt(i) - s.charAt(i+1)) == 32) {  
-                return makeGood(s.substring(0, i) + s.substring(i+2));
+        StringBuilder ss = new StringBuilder(s);
+
+        for (int i = 0; i <= ss.length() - 2; i++)
+            if (ss.codePointAt(i)+32 == ss.codePointAt(i + 1) || ss.codePointAt(i)-32 == ss.codePointAt(i + 1)) {
+                ss.delete(i, i + 2);
+                i =- 1;
             }
-        }     
-        return s;
+            
+        return ss.toString();
     }
 }
