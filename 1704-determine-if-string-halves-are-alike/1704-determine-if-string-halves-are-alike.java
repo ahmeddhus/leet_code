@@ -1,6 +1,16 @@
 class Solution {
     public boolean halvesAreAlike(String s) {
-        Set<Character> vowels = Set.of('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U');
+        HashSet<Character> setVowels = new HashSet<>();
+        setVowels.add('a');
+        setVowels.add('A');
+        setVowels.add('e');
+        setVowels.add('E');
+        setVowels.add('i');
+        setVowels.add('I');
+        setVowels.add('o');
+        setVowels.add('O');
+        setVowels.add('u');
+        setVowels.add('U');
 
         final int mid = s.length() / 2;
         String a = s.substring(0, mid);
@@ -10,10 +20,10 @@ class Solution {
         int bNum = 0;
 
         for (int i = 0; i < a.length(); i++) {
-            if (vowels.contains(a.charAt(i))) {
+            if (setVowels.contains(a.charAt(i))) {
                 aNum++;
             }
-            if (vowels.contains(b.charAt(i))) {
+            if (setVowels.contains(b.charAt(i))) {
                 bNum++;
             }
         }
