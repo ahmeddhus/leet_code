@@ -3,11 +3,20 @@ import java.util.HashSet;
 
 class Solution {
     public int findCenter(int[][] edges) {
-       if(edges[0][0] == edges[1][0] || edges[0][0] == edges[1][1])
-           return edges[0][0];
-        else if(edges[0][1] == edges[1][0] || edges[0][1] == edges[1][1])
-            return edges[0][1];
-        else             
-            return -1;
+        Set<Integer> outEdgesFound = new HashSet<>();
+        
+        for(int[] edge : edges){
+            if(outEdgesFound.contains(edge[0])){
+                return edge[0];
+            }
+            outEdgesFound.add(edge[0]);
+            
+             if(outEdgesFound.contains(edge[1])){
+                return edge[1];
+            }
+            outEdgesFound.add(edge[1]);           
+        }
+        
+        return -1;
     }
 }
