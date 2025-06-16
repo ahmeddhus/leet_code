@@ -4,14 +4,18 @@ class Solution {
         int len2 = word2.length();
         StringBuilder output = new StringBuilder(len1 + len2);
 
-        int i = 0, j = 0;
-        while (i < len1 && j < len2) {
-            output.append(word1.charAt(i++));
-            output.append(word2.charAt(j++));
+        int i = 0;
+        while (i < len1 && i < len2) {
+            output.append(word1.charAt(i));
+            output.append(word2.charAt(i));
+            i++;
         }
-        // Append the remaining part of the longer string
-        if (i < len1) output.append(word1.substring(i));
-        if (j < len2) output.append(word2.substring(j));
+
+        if (i < len1) {
+            output.append(word1, i, len1);
+        } else if (i < len2) {
+            output.append(word2, i, len2);
+        }
 
         return output.toString();
     }
