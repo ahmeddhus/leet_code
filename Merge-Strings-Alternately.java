@@ -13,7 +13,7 @@ class Solution {
 
         if (word1Length > i) {
             output.append(word1, i, word1Length);
-        } else if (word2Length > 2) {
+        } else if (word2Length > i) {
             output.append(word2, i, word2Length);
 
         }
